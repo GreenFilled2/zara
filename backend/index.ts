@@ -1,15 +1,23 @@
-import express, { Request, Response } from 'express';
+import express, { Express, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import Mongoose from 'mongoose';
 import morgan from 'morgan'
+import router from './routes/route';
 
-const app = express();
+const app: Express = express();
 const PORT = 3000;
 
 // Parse incoming request bodies
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(morgan("dev"))
+app.use(morgan('dev'))
+app.use("/route", router)
+
+app.get("/", (req: Request, res: Response) => {
+  res.send("hellu")
+})
+
+
 
 // Connect to MongoDB
 // Mongoose
