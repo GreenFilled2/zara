@@ -8,7 +8,6 @@ import {
   MDBRow,
   MDBCol,
   MDBInput,
-  MDBCheckbox
 }
 from 'mdb-react-ui-kit';
 
