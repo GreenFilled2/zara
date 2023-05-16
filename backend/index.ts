@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan('dev'))
 app.use(cors())
+
 app.use("/auth", authRouter)
 
 app.get("/", (req: Request, res: Response) => {
