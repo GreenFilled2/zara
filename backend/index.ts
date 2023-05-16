@@ -1,17 +1,22 @@
+import 'dotenv/config'
 import express, { Express, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import Mongoose from 'mongoose';
 import morgan from 'morgan'
-import router from './routes/route';
+import authRouter from './routes/authRoute';
+import cors from 'cors';
+
+const DB_URI = process.env.DB_URI
 
 const app: Express = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // Parse incoming request bodies
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan('dev'))
-app.use("/route", router)
+app.use(cors())
+app.use("/auth", authRouter)
 
 app.get("/", (req: Request, res: Response) => {
   res.send("hellu")
@@ -20,14 +25,14 @@ app.get("/", (req: Request, res: Response) => {
 
 
 // Connect to MongoDB
-// Mongoose
-//   .connect('mongodb://localhost:27017/mydatabase')
-//   .then(() => {
-//     console.log('Connected to MongoDB');
-//   })
-//   .catch((error) => {
-//     console.error('MongoDB connection error:', error);
-//   });
+Mongoose
+  .connect(DB_URI as string)
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((error) => {
+    console.error('MongoDB connection error:', error);
+});
 
 
 // Start the server
