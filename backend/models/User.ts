@@ -15,7 +15,7 @@ const UserSchema: Schema<UserDocument> = new Schema({
   name: String,
   receivesEmails: Boolean,
   balance: Number,
-  cart: Object,
+  cart: String,
 });
 
 

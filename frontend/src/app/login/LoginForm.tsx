@@ -21,11 +21,11 @@ export default function LoginForm() {
   const [password, setPassword] = useState("")
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const newUser = {
+    const user = {
       email,
       password,
     }
-    const res = await axios.post("http://localhost:3001/auth/login", newUser, {
+    const res = await axios.post("http://localhost:3001/auth/login", user, {
       headers: {
         "Content-Type": "application/json"
       }
