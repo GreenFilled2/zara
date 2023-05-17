@@ -33,7 +33,7 @@ export default function LoginForm() {
     window.localStorage.setItem("currentUser", JSON.stringify(res.data))
   }
   return (
-    <MDBContainer className='' id="login-container">
+    <MDBContainer id="login-container">
       <MDBRow className='g-0 d-flex'>
         <MDBCard id="login-card">
           <h1 style={{marginBottom: "2rem"}}>Log in to your account</h1>
