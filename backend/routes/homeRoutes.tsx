@@ -1,11 +1,8 @@
-'use client'
-
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-
-function Navbar() {
+function Example() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -14,8 +11,7 @@ function Navbar() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-    ZARA 
-
+        Launch
       </Button>
 
       <Offcanvas show={show} onHide={handleClose}>
@@ -31,5 +27,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
-// what is the next step here to complet the navbar 
+export default Example;

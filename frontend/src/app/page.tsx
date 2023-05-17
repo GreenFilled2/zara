@@ -1,97 +1,60 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import Navbar from './components/navbar'
+import Link from 'next/link'
+import './globals.css'
+import React from 'react';
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <main className={styles.main}>
-      <Navbar />
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+ 
+   
+      <body>
+        <div id="header"></div>
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+          <div className="slideshow-container">
+            <div className="mySlides fade">
+              <img
+                id="slideImg"
+                src="https://static.zara.net/photos///contents/mkt/spots/aw21-sales/subhome-xmedia-launch-man//w/936/IMAGE-large-portrait-513a392e-6ce7-44af-bca7-e8b83a17bf4c-ca_ES@AD_0.jpg?ts=1642192906915"
+                alt=""
+              />
+              <p id="sale">S A L E</p>
+              <p id="saleTag">ONLINE AND IN STORES</p>
+            </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+            <div className="mySlides fade">
+              <img
+                id="slideImg"
+                src="https://static.zara.net/photos///contents/mkt/spots/aw21-sales/subhome-xmedia-launch-woman//w/936/IMAGE-large-portrait-ac1f9668-d571-40cd-b8fd-9f5948180cf4-ca_ES@AD_0.jpg?ts=1642192477026"
+                alt=""
+              />
+              <p id="sale">S A L E</p>
+              <p id="saleTag">ONLINE AND IN STORES</p>
+            </div>
+
+            <div className="mySlides fade">
+              <img
+                id="slideImg"
+                src="https://static.zara.net/photos///contents/mkt/spots/aw21-sales/subhome-xmedia-launch-kids//w/936/IMAGE-large-portrait-fec69357-a451-4502-8063-fd80331ae46e-ca_ES@AD_0.jpg?ts=1642193534887"
+                alt=""
+              />
+              <p id="sale">S A L E</p>
+              <p id="saleTag">ONLINE AND IN STORES</p>
+            </div>
+
+          </div>
+          <video id="bookVdo" width="82%" height="675" autoPlay muted loop>
+        <source
+          src="https://static.zara.net/video///mkt/2021/12/aw21-happy-new-year-subhomes/subhome-xmedia-video-52-2/w/1808//large-landscape/subhome-xmedia-video-52-2_0.mp4?ts=1640882484837"
+          type="video/mp4"
         />
+      </video>
+      <p id="smallText">INTRODUCING THE FALL/WINTER 2021 COLLECTION</p>
+      <div id="audio-control" className="muted">U</div>
+      <div id="footer"></div>
       </div>
+      </body>
+     
+  )}
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+  export default Home
