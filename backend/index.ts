@@ -3,7 +3,8 @@ import express, { Express, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import Mongoose from 'mongoose';
 import morgan from 'morgan'
-import authRouter from './routes/authRoute';
+import authRoute from './routes/authRoute';
+import prodRoute from './routes/prodRoute';
 import cors from 'cors';
 
 const DB_URI = process.env.DB_URI
@@ -17,7 +18,8 @@ app.use(bodyParser.json());
 app.use(morgan('dev'))
 app.use(cors())
 
-app.use("/auth", authRouter)
+app.use("/auth", authRoute)
+app.use("/products", prodRoute)
 
 app.get("/", (req: Request, res: Response) => {
   res.send("hellu")
