@@ -32,7 +32,7 @@ export const login = async (req: Request, res: Response) => {
 export const signup = async (req: Request, res: Response) => {
     try {
         const {email, password, name} = req.body
-
+        console.log(req.body)
         const userExists = await User.findOne({email})
         if (userExists) {
             res.status(409).json({ error: 'Email already in use' })
@@ -45,17 +45,12 @@ export const signup = async (req: Request, res: Response) => {
             password: hashedPassword,
             receivesEmails: false,
             balance: 0,
-            cart: {
-                items: [],
-                totalPrice: 0,
-                recommendations:[],
-            }
         })
 
         await newUser.save()
         const token = jwt.sign({}, TOKEN as Secret)
 
-        res.json({token, name, email, balance: newUser.balance, cart: newUser.cart})
+        res.json({token, name, email, balance: newUser.balance})
     } catch(err) {
         res.status(500).json(err)
     }

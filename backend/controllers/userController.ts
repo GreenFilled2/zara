@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { userSearch } from '../models/userModel';
+import { userSearch,User } from '../models/userModel';
 
 export const searchUsers = (req: Request, res: Response) => {
   console.log('&&')
@@ -13,4 +13,21 @@ export const searchUsers = (req: Request, res: Response) => {
       res.json(results);
     }
   });
+};
+export const postUser = async (req: Request, res: Response) => {
+  try {
+    const user= req.body;
+    console.log('Creating user', user);
+
+    const createdUser = await User.create({
+      name: user.name,
+      adresse: user.adresse,
+      
+    });
+
+    res.status(200).send(createdUser);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
+  }
 };

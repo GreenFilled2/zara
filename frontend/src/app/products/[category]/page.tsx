@@ -1,11 +1,10 @@
-import Component from "./Component";
+import ProductList from "./ProductList";
 
 export default function Products() {
 
   return (
-    <div>
-      <h1>Hello Page Products</h1>
-      <Component />
+    <div style={{ marginTop: "9rem" }}>
+      <ProductList />
     </div>
   );
 }

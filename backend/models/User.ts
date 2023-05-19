@@ -7,6 +7,7 @@ export interface UserDocument extends Document {
   receivesEmails: boolean,
   balance: number,
   cart: string,
+  adresse:string
 }
 
 const UserSchema: Schema<UserDocument> = new Schema({
@@ -16,6 +17,7 @@ const UserSchema: Schema<UserDocument> = new Schema({
   receivesEmails: Boolean,
   balance: Number,
   cart: String,
+  adresse:String
 });
 
 

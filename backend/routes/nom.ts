@@ -1,8 +1,10 @@
 import express, { Router } from "express";
-import { getProducts } from "../controllers/prodController";
+import { seeUser } from "../controllers/nomController";
 
 const router: Router = express.Router()
 
-router.get("/:subcat", getProducts)
+router.post("/compte", seeUser)
+
+
 
 export default router
