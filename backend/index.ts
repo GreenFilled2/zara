@@ -5,6 +5,9 @@ import Mongoose from 'mongoose';
 import morgan from 'morgan'
 import authRoute from './routes/authRoute';
 import prodRoute from './routes/prodRoute';
+import user from './routes/user'
+import nom from './routes/nom'
+
 import searchRoute from './routes/searchRoute';
 import cors from 'cors';
 
@@ -21,7 +24,7 @@ app.use(cors())
 
 app.use("/auth", authRoute)
 app.use("/products", prodRoute)
-app.use('/search',searchRoute)
+
 app.get("/", (req: Request, res: Response) => {
   res.send("hellu")
 })
