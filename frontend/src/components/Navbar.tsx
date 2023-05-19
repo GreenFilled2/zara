@@ -7,10 +7,10 @@ import Navbar from 'react-bootstrap/Navbar';
 // import Sidebar from './sidebar';
 
 const NavBar = () => {
-    const [path, setPath] = useState("")
+    const [path, setPath] = useState("");
     return (
         <div>
-            <Navbar bg="transparent" expand="lg" variant="light" className="navbares" fixed="top">
+            <Navbar bg="transparent" expand="lg" variant="light" className="navbar" fixed="top">
                 {/* <Sidebar  /> */}
                 <Container fluid>
                     <Navbar.Brand href="/">
@@ -26,7 +26,6 @@ const NavBar = () => {
                             <Nav.Link
                                 href="/"
                                 style={{
-
                                     fontSize: "15px",
                                     marginLeft: "20px",
                                 }}
@@ -46,19 +45,19 @@ const NavBar = () => {
                                     textDecoration: "underline",
                                 }}
                             >
-                                RECHERCHER
+                                SEARCH
                             </Nav.Link>
                         </div>
 
                         <div>
                             <Nav.Link href="/login" style={{ color: "#212529", fontFamily: "Helvetica Neue", fontSize: "12px" }}>
-                                SE CONNECTER
+                                LOG IN
                             </Nav.Link>
                         </div>
 
                         <div>
                             <Nav.Link
-                                href="/Search"
+                                href="/help"
                                 style={{
                                     color: "#212529",
                                     fontFamily: "Helvetica Neue",
@@ -66,7 +65,7 @@ const NavBar = () => {
                                     marginLeft: "20px",
                                 }}
                             >
-                                AIDE
+                                HELP
                             </Nav.Link>
                         </div>
 

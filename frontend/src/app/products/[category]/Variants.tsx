@@ -3,7 +3,11 @@ import Tabs from 'react-bootstrap/Tabs';
 
 // import Sonnet from '../../components/Sonnet';
 
-function Variants() {
+interface variants {
+    variants: string[],
+}
+
+function Variants({ variants }: variants) {
     return (
         <Tabs
             defaultActiveKey="home"

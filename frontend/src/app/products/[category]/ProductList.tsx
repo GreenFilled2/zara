@@ -12,13 +12,13 @@ import Variants from "./Variants";
 
 import './prods.css'
 import axios from "axios";
+import Product from "./Product";
 
 function App() {
     const [category, setCategory] = useState<String>("")
     const [products, setProducts] = useState<Array<Object>>([])
 
     useEffect(() => {
-        console.log("gg")
         setCategory(window.location.pathname.split("/")[2])
         if (category) {
             axios.get(`http://localhost:3002/products/${category}`)
@@ -31,24 +31,12 @@ function App() {
         return (
 
             <MDBContainer className="my-5">
-                <Variants />
+                {/* <Variants /> */}
+                {products.map((e, i) => (
+                    <Product product={e} key={i} />
+                ))}
 
-                <MDBRow className="flex justify-center">
 
-                    <MDBCol md="12" lg="4" className="mb-4">
-                        <MDBCard id="product-card" className="h-[86vh]">
-                            <MDBCardImage
-                                src={products[0].images[0]}
-                                className="w-100"
-                            />
-                            <MDBCardBody className="flex flex-row justify-between p-0 pt-1.5">
-                                <span className="card-title mb-3 text-left details">{products[0].name}</span>
-                                <span className="mb-3 text-right details">${products[0].price}</span>
-                            </MDBCardBody>
-                        </MDBCard>
-                    </MDBCol>
-
-                </MDBRow>
             </MDBContainer>
 
         );
