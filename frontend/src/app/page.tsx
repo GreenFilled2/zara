@@ -5,7 +5,7 @@ import { Carousel } from 'react-bootstrap';
 
 const HomeCarousel = () => {
   return (
-    <Carousel fade controls={false} indicators={false} interval={2000}>
+    <Carousel fade controls={false} indicators={false} interval={1800}>
       <Carousel.Item>
         <img
           className="d-block w-100"

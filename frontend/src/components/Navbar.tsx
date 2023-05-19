@@ -6,13 +6,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Sidebar from './sidebar';
 
+import './nav.css'
+
 const NavBar = () => {
     const [path, setPath] = useState("");
     return (
         <div>
             <Navbar bg="transparent" expand="lg" variant="light" className="navbar" fixed="top">
-
                 <Sidebar />
+
                 <Container fluid>
                     <Navbar.Brand href="/">
                         <img
