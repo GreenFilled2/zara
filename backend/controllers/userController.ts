@@ -1,6 +1,18 @@
-import { Request, Response } from "express";
-import { User } from "../models/User";
+import { Request, Response } from 'express';
+import { userSearch,User } from '../models/userModel';
 
+export const searchUsers = (req: Request, res: Response) => {
+  const searchTerm: string = req.query.q as string;
+
+  userSearch(searchTerm, (err: Error | null, results: any) => {
+    if (err) {
+      console.error('Error searching users:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      res.json(results);
+    }
+  });
+};
 export const postUser = async (req: Request, res: Response) => {
   try {
     const user= req.body;
