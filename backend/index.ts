@@ -10,7 +10,7 @@ import cors from 'cors';
 const DB_URI = process.env.DB_URI
 
 const app: Express = express();
-const PORT = 3001;
+const PORT = 3002;
 
 // Parse incoming request bodies
 app.use(bodyParser.urlencoded({ extended: false }));

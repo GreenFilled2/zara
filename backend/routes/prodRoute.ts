@@ -3,6 +3,6 @@ import { getProducts } from "../controllers/prodController";
 
 const router: Router = express.Router()
 
-router.get("/category/:cat/:subcat/:variant", getProducts)
+router.get("/:subcat", getProducts)
 
 export default router
