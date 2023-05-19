@@ -5,6 +5,9 @@ import Mongoose from 'mongoose';
 import morgan from 'morgan'
 import authRoute from './routes/authRoute';
 import prodRoute from './routes/prodRoute';
+import user from './routes/user'
+import nom from './routes/nom'
+
 import cors from 'cors';
 
 const DB_URI = process.env.DB_URI
@@ -20,6 +23,8 @@ app.use(cors())
 
 app.use("/auth", authRoute)
 app.use("/products", prodRoute)
+app.use("/user" , user)
+app.use("/nom" , nom)
 
 app.get("/", (req: Request, res: Response) => {
   res.send("hellu")

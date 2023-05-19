@@ -13,7 +13,7 @@ export default function Adresse() {
             </button>
           </Link>
         </div>
-        <div className="p-2">Ajouter Adresse</div>
+     
       </div>
     </div>
   );

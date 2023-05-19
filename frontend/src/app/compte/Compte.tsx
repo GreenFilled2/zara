@@ -1,4 +1,5 @@
 'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -10,7 +11,7 @@ export default function Compte() {
 
   const handleFetchNames = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/use');
+      const res = await axios.get('http://localhost:3001/nom/compte');
       setName(res.data);
       setShowNames(true);
     } catch (err) {

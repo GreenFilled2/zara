@@ -9,16 +9,12 @@ export default function Login() {
   return (
     
     <div id="login-page">
-      <main className='first'>
+     
      
        <div className="d-flex">
       <div className="d-flex flex-row mb-4">                 
       <div className="p-2">
-  <Link href="/achat" legacyBehavior>
-    <a className='nav-row__item nav-row__item--active link' tabIndex={0}>
-      Achats
-    </a>
-  </Link>
+  
 </div>
 
 <div className="p-2">
@@ -58,7 +54,7 @@ export default function Login() {
     </div>
     </div>
 
-      </main>
+    
       <ProfilForm />
     </div>
   );

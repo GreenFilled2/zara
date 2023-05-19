@@ -1,14 +1,10 @@
+.link {
+  color: black;
+  text-decoration: underline;
+  margin-top: 300px;
+}
 
-
-
-img {
-    border-radius: 8px;
-    border-radius: 4px;
-    padding: 5px;
-    width: 60px;
-  }
-
-  .phrase{
-    color:black;
-    margin-top: 50px;
-  }
+.nav-row__item {
+  margin-top: 100px;
+  
+}

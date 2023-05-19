@@ -32,7 +32,7 @@ export const login = async (req: Request, res: Response) => {
 export const signup = async (req: Request, res: Response) => {
     try {
         const {email, password, name} = req.body
-
+        console.log(req.body)
         const userExists = await User.findOne({email})
         if (userExists) {
             res.status(409).json({ error: 'Email already in use' })
