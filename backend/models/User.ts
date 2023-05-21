@@ -1,12 +1,11 @@
-import Mongoose, { Document, Schema } from 'mongoose';
+import Mongoose, { Document, Schema } from "mongoose";
 
 export interface UserDocument extends Document {
   email: string;
   password: string;
   name: string;
-  receivesEmails: boolean,
-  balance: number,
-  cart: string,
+  receivesEmails: boolean;
+  balance: number;
 }
 
 const UserSchema: Schema<UserDocument> = new Schema({
@@ -15,8 +14,6 @@ const UserSchema: Schema<UserDocument> = new Schema({
   name: String,
   receivesEmails: Boolean,
   balance: Number,
-  cart: String,
 });
 
-
-export const User = Mongoose.model<UserDocument>('User', UserSchema);
+export const User = Mongoose.model<UserDocument>("User", UserSchema);

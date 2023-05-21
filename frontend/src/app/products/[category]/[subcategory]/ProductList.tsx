@@ -16,12 +16,14 @@ import Product from "./Product";
 
 function App() {
     const [category, setCategory] = useState<String>("")
+    const [subCategory, setSubCategory] = useState<String>("")
     const [products, setProducts] = useState<Array<Object>>([])
 
     useEffect(() => {
         setCategory(window.location.pathname.split("/")[2])
-        if (category) {
-            axios.get(`http://localhost:3002/products/${category}`)
+        setSubCategory(window.location.pathname.split("/")[3])
+        if (category && subCategory) {
+            axios.get(`http://localhost:3002/products/${category}/${subCategory}`)
                 .then((res) => setProducts(res.data))
                 .catch((err) => console.log(err))
         }

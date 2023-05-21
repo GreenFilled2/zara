@@ -6,6 +6,7 @@ import morgan from 'morgan'
 import authRoute from './routes/authRoute';
 import prodRoute from './routes/prodRoute';
 import searchRoute from './routes/searchRoute';
+import cartRoute from './routes/cartRoute';
 import cors from 'cors';
 
 const DB_URI = process.env.DB_URI
@@ -21,7 +22,8 @@ app.use(cors())
 
 app.use("/auth", authRoute)
 app.use("/products", prodRoute)
-app.use('/search',searchRoute)
+app.use('/search', searchRoute)
+app.use('/cart', cartRoute)
 app.get("/", (req: Request, res: Response) => {
   res.send("hellu")
 })
@@ -36,7 +38,7 @@ Mongoose
   })
   .catch((error) => {
     console.error('MongoDB connection error:', error);
-});
+  });
 
 
 // Start the server

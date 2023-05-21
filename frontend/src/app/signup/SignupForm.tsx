@@ -15,8 +15,10 @@ import {
 import "./form.css"
 import axios from 'axios';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function SignupForm() {
+  const router = useRouter()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confPassword, setConfPassword] = useState("")
@@ -35,6 +37,7 @@ export default function SignupForm() {
       }
     })
     window.localStorage.setItem("currentUser", JSON.stringify(res.data))
+    router.push("/")
   }
   return (
     <MDBContainer className='' id="signup-container">
